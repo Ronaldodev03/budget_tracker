@@ -1,3 +1,4 @@
+import { CurrencyComboBox } from "@/app/components/CurrencyComboBox";
 import Logo from "@/app/components/Logo";
 import { Button } from "@/components/ui/button";
 import {
@@ -44,7 +45,9 @@ async function page() {
             Set your default currency for transactions
           </CardDescription>
         </CardHeader>
-        <CardContent>Currency Combo Box</CardContent>
+        <CardContent>
+          <CurrencyComboBox />
+        </CardContent>
       </Card>
       <Separator />
       <Button className="w-full" asChild>
