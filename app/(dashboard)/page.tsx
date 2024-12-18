@@ -1,4 +1,4 @@
-import CreateTransactionDialog from "@/app/(dashboard)/_components/CreateTrasactionDialog";
+import CreateTransactionDialog from "@/app/(dashboard)/_components/CreateTransactionDialog";
 import { Button } from "@/components/ui/button";
 import prisma from "@/lib/prisma";
 import { currentUser } from "@clerk/nextjs/server";
