@@ -29,6 +29,7 @@ import {
 import { zodResolver } from "@hookform/resolvers/zod";
 import React, { ReactNode, useState } from "react";
 import { useForm } from "react-hook-form";
+import CategoryPicker from "./CategoryPicker";
 
 interface Props {
   type: TransactionType;
@@ -104,7 +105,9 @@ function CreateCategoryDialog({ type, trigger }: Props) {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel>Category</FormLabel>
-                    <FormControl>Category Picker</FormControl>
+                    <FormControl>
+                      <CategoryPicker type={type} />
+                    </FormControl>
                     <FormDescription>
                       Select a category for this transaction
                     </FormDescription>
