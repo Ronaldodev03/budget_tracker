@@ -158,12 +158,12 @@ function CreateCategoryDialog({ type, trigger }: Props) {
               )}
             />
 
-            <div className=" flex //items-center justify-center gap-2">
+            <div className=" flex items-center justify-center gap-2">
               <FormField
                 control={form.control}
                 name="category"
                 render={({ field }) => (
-                  <FormItem>
+                  <FormItem className="flex flex-col">
                     <FormLabel>Category</FormLabel>
                     <FormControl>
                       <CategoryPicker
@@ -182,7 +182,7 @@ function CreateCategoryDialog({ type, trigger }: Props) {
                 control={form.control}
                 name="date"
                 render={({ field }) => (
-                  <FormItem className="//flex flex-col">
+                  <FormItem className="flex flex-col">
                     <FormLabel>Transaction date</FormLabel>
                     <Popover>
                       <PopoverTrigger asChild>
