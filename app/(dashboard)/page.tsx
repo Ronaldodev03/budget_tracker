@@ -1,5 +1,5 @@
 import CreateTransactionDialog from "@/app/(dashboard)/_components/CreateTransactionDialog";
-//import History from "@/app/(dashboard)/_components/History";
+import History from "@/app/(dashboard)/_components/History";
 import Overview from "@/app/(dashboard)/_components/Overview";
 import { Button } from "@/components/ui/button";
 import prisma from "@/lib/prisma";
@@ -57,8 +57,7 @@ async function page() {
         </div>
       </div>
       <Overview userSettings={userSettings} />
-      {/* <History userSettings={userSettings} /> */}
-      <p>history</p>
+      <History userSettings={userSettings} />
     </div>
   );
 }
