@@ -1,4 +1,6 @@
 import CreateTransactionDialog from "@/app/(dashboard)/_components/CreateTransactionDialog";
+//import History from "@/app/(dashboard)/_components/History";
+import Overview from "@/app/(dashboard)/_components/Overview";
 import { Button } from "@/components/ui/button";
 import prisma from "@/lib/prisma";
 import { currentUser } from "@clerk/nextjs/server";
@@ -24,7 +26,7 @@ async function page() {
   return (
     <div className="h-full bg-background">
       <div className="border-b bg-card">
-        <div className="container flex flex-wrap items-center justify-between gap-6 py-8">
+        <div className="lg:container lg:mx-auto px-8 flex flex-wrap items-center justify-between gap-6 py-8">
           <p className="text-3xl font-bold">Hello, {user.firstName}! 👋</p>
 
           <div className="flex items-center gap-3">
@@ -54,7 +56,8 @@ async function page() {
           </div>
         </div>
       </div>
-      <p>overview</p>
+      <Overview userSettings={userSettings} />
+      {/* <History userSettings={userSettings} /> */}
       <p>history</p>
     </div>
   );
