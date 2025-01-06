@@ -33,6 +33,7 @@ export async function CreateTransaction(form: CreateTransactionSchemaType) {
 
   // NOTE: don't make confusion between $transaction ( prisma ) and prisma.transaction (table)
 
+  /* By using prisma.$transaction, the code ensures that all these database operations are executed as a single transaction. This guarantees that either all the operations complete successfully, or none of them are applied, maintaining data integrity. */
   await prisma.$transaction([
     // Create user transaction
     prisma.transaction.create({
@@ -46,6 +47,8 @@ export async function CreateTransaction(form: CreateTransactionSchemaType) {
         categoryIcon: categoryRow.icon,
       },
     }),
+
+    /* "Upsert" is a database operation that stands for "update or insert." It allows you to either update an existing record if it matches certain conditions, or create a new one if it doesn't exist.  */
 
     // Update month aggregate table
     prisma.monthHistory.upsert({
