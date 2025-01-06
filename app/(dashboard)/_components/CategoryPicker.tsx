@@ -1,5 +1,6 @@
 "use client";
 
+import CreateCategoryDialog from "@/app/(dashboard)/_components/CreateCategoryDialog";
 import { Button } from "@/components/ui/button";
 import {
   Command,
@@ -47,6 +48,7 @@ function CategoryPicker({ type, onChange }: Props) {
     (category: Category) => category.name === value
   );
 
+  // selects automatically the brand new category created in the CreateCategoryDialog
   const successCallback = useCallback(
     (category: Category) => {
       setValue(category.name);
@@ -79,6 +81,7 @@ function CategoryPicker({ type, onChange }: Props) {
           }}
         >
           <CommandInput placeholder="Search category..." />
+          <CreateCategoryDialog type={type} successCallback={successCallback} />
           <CommandEmpty>
             <p>Category not found</p>
             <p className="text-xs text-muted-foreground">
