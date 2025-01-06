@@ -30,8 +30,7 @@ export async function GET(request: Request) {
   return Response.json(stats);
 }
 
-/* what about the type GetBalanceStatsResponseType
-The GetBalanceStatsResponseType is a TypeScript type alias that represents the shape of the data returned by the getBalanceStats function. It uses the Awaited and ReturnType utility types to determine the exact type of the function's asynchronous return value */
+/* The GetBalanceStatsResponseType is a TypeScript type alias that represents the shape of the data returned by the getBalanceStats function. It uses the Awaited and ReturnType utility types to determine the exact type of the function's asynchronous return value */
 export type GetBalanceStatsResponseType = Awaited<
   ReturnType<typeof getBalanceStats>
 >;
