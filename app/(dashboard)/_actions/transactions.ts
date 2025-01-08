@@ -7,6 +7,10 @@ import {
 } from "@/app/schema/transaction";
 import { currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
+import {
+  DeleteCategorySchema,
+  DeleteCategorySchemaType,
+} from "@/app/schema/categories";
 
 export async function CreateTransaction(form: CreateTransactionSchemaType) {
   const parsedBody = CreateTransactionSchema.safeParse(form);
@@ -104,4 +108,26 @@ export async function CreateTransaction(form: CreateTransactionSchemaType) {
       },
     }),
   ]);
+}
+
+export async function DeleteCategory(form: DeleteCategorySchemaType) {
+  const parsedBody = DeleteCategorySchema.safeParse(form);
+  if (!parsedBody.success) {
+    throw new Error("bad request");
+  }
+
+  const user = await currentUser();
+  if (!user) {
+    redirect("/sign-in");
+  }
+
+  return await prisma.category.delete({
+    where: {
+      name_userId_type: {
+        userId: user.id,
+        name: parsedBody.data.name,
+        type: parsedBody.data.type,
+      },
+    },
+  });
 }
