@@ -158,7 +158,7 @@ function CreateCategoryDialog({ type, trigger }: Props) {
               )}
             />
 
-            <div className=" flex items-center justify-center gap-2">
+            <div className=" flex flex-col sm:flex-row sm:items-center justify-center gap-2">
               <FormField
                 control={form.control}
                 name="category"
@@ -237,7 +237,11 @@ function CreateCategoryDialog({ type, trigger }: Props) {
               Cancel
             </Button>
           </DialogClose>
-          <Button onClick={form.handleSubmit(onSubmit)} disabled={isPending}>
+          <Button
+            className=" mb-2 sm:mb-0"
+            onClick={form.handleSubmit(onSubmit)}
+            disabled={isPending}
+          >
             {!isPending && "Create"}
             {isPending && <Loader2 className="animate-spin" />}
           </Button>
