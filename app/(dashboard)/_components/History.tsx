@@ -43,10 +43,10 @@ const History = ({ userSettings }: { userSettings: UserSettings }) => {
     historyDataQuery.data && historyDataQuery.data.length > 0;
 
   return (
-    <div className="lg:container lg:mx-auto px-8">
+    <div className="lg:container lg:mx-auto px-4 sm:px-8">
       <h2 className=" mt-12 text-3xl font-bold">History</h2>
 
-      <Card className=" col-span-12 mt-12 w-full">
+      <Card className=" col-span-12 mt-2 w-full">
         <CardHeader className=" gap-2">
           <CardTitle className=" grid grid-flow-row justify-between gap-2 md:grid-flow-col">
             <HistoryPeriodSelector
