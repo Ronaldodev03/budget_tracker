@@ -43,7 +43,7 @@ const TranactionsPage = () => {
         </div>
       </div>
 
-      <div className="lg:container lg:mx-auto px-8 flex flex-wrap items-center justify-between gap-6 py-8">
+      <div className="lg:container lg:mx-auto px-4 sm:px-8 flex flex-wrap items-center justify-between gap-6 py-8">
         <TransactionTable from={dateRange.from} to={dateRange.to} />
       </div>
     </>

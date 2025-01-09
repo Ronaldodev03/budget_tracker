@@ -33,7 +33,7 @@ const page = () => {
         </div>
       </div>
 
-      <div className="lg:container lg:mx-auto px-8 flex flex-col //flex-wrap //items-center //justify-between gap-4 py-8">
+      <div className="lg:container lg:mx-auto px-4 sm:px-8 flex flex-col //flex-wrap //items-center //justify-between gap-4 py-8">
         <Card>
           <CardHeader>
             <CardTitle>Currency</CardTitle>
